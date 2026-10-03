@@ -2,9 +2,9 @@
 #!/usr/bin/env python
 # coding=utf-8
 #
-# Copyright 2015 Arn-O. See the LICENSE file at the top-level directory of this
+# Copyright 2013 ricky paul lambert. See the LICENSE file at the top-level directory of this
 # distribution and at
-# https://github.com/Arn-O/py-kodi-remote-controller/blob/master/LICENSE.
+# https://github.com/rixkyplambert57/remote_controller.py/blob/master/LICENSE.
 
 '''
 Module of functions for echonest API management.
