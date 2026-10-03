@@ -1,7 +1,383 @@
-#!/usr/bin/env python
+import os
+import requests
+
+ENDPOINTS = {
+    "gemini": {
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent",
+        "api_key": os.getenv("JAMES_ANTHONY_LAMBERT"),
+        "auth_type": "query_param",
+    },
+    "huggingface": {
+        "url": "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3",
+        "api_key": os.getenv("JAMES_LAMBERT"),
+        "auth_type": "bearer",
+    },
+    "grok": {
+        "url": "https://api.x.ai/v1/chat/completions",
+        "api_key": os.getenv("JAMES_ANTHONY_LAMBERT"),
+        "auth_type": "bearer",
+    },
+}
+
+def route_payload(target: str, payload: dict):
+    config = ENDPOINTS.get(target)
+    if not config:
+        raise ValueError(f"Unknown route target: {target}")
+
+    api_key = config["api_key"]
+    if not api_key:
+        raise ValueError(f"Missing environment variable key for target: {target}")
+
+    headers = {"Content-Type": "application/json"}
+    url = config["url"]
+    params = {}
+
+    if config["auth_type"] == "bearer":
+        headers["Authorization"] = f"Bearer {api_key}"
+    elif config["auth_type"] == "query_param":
+        params["key"] = api_key
+
+    response = requests.post(url, json=payload, headers=headers, params=params, timeout=30)
+    response.raise_for_status()
+    return response.json()
+
+if __name__ == "__main__":
+    print("Remote controller routing module loaded.")
+<a href='http://www.lambert.ai/'>Found</a>./data/data/com.termux/files/usr/tmp/pip-build-env-0phxb3vb/overlay/lib/python3.13/site-packages/setuptools/build_meta.py<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Send the parked domain's origin as the referrer so the market can
+       attribute the visit to this domain's TLD. -->
+  <meta name="referrer" content="origin" />
+  <title></title>
+  <script type="module" crossorigin src="/assets/index-BuG04mTK.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B_f2Ggms.css">
+  <script async src="https://lander.parity.domains/js/pa-6FZUe2Iv3m6Yx_KBS2sv2.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init({customProperties: {domain: location.hostname}});
+  </script>
+</head>
+
+<body class="gb-scope">
+  <header>
+    <div class="container h-20 flex items-center">
+      <a href="https://www.namecheap.com/?utm_source=parkingpage&utm_medium=referral&utm_campaign=nc_market">
+        <img src="logo.svg" alt="Namecheap Logo" width="155" height="28" />
+      </a>
+    </div>
+    <div class="container text-center lg:text-left">
+      <div class="py-20">
+        <h1 class="break-all font-bold tracking-[-0.4px] text-4xl sm:text-5xl md:text-7xl mb-2 sm:mb-4"></h1>
+        <p class="sm:text-xl lg:text-2xl">has been recently registered with
+          namecheap.com</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="bg-gray-80/20">
+    <div
+      class="container py-8 flex flex-col items-stretch lg:items-center lg:flex-row gap-8 text-center lg:text-left min-h-74">
+      <section class="flex-1">
+        <h2 class="font-bold sm:text-2xl md:text-3xl mb-2">Want a domain name like this?</h2>
+        <p class="text-sm sm:text-lg md:text-2xl">Discover domains on auction now</p>
+        <a class="mt-6 gb-btn gb-btn--hg gb-btn--primary" href="https://www.namecheap.com/market/?utm_source=parkingpage&utm_medium=referral&utm_campaign=nc_market">See all auctions</a>
+      </section>
+      <div class="flex-1" id="auction-list"></div>
+    </div>
+  </main>
+
+  <footer class="py-20 container text-center md:text-left">
+    <h2 class="text-sm sm:text-lg md:text-2xl font-bold mb-2">Download the Namecheap Auctions app</h2>
+    <p class="text-sm sm:text-base md:text-lg">Take auctions with you wherever you go</p>
+    <ul class="flex flex-col items-center md:flex-row gap-8 mt-8">
+      <li>
+        <a
+          href="https://apps.apple.com/us/app/namecheap-auctions/id6743634772?itscg=30200&itsct=apps_box_badge&mttnsubad=6743634772">
+          <img width="144" height="48" src="appstore.svg" alt="Download on the App Store" />
+        </a>
+      </li>
+      <li>
+        <a href="https://play.google.com/store/apps/details?id=marketplace.com.namecheap">
+          <img width="162" height="48" src="googleplay.svg" alt="Get it on Google Play" />
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+</body>
+
+</html>* Host lambert.ai:80 was resolved.
+* IPv6: (none)
+* IPv4: 192.64.119.15
+*   Trying 192.64.119.15:80...
+* Established connection to lambert.ai (192.64.119.15 port 80) from 10.0.0.96 port 41708
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: lambert.ai
+> User-Agent: curl/8.21.0
+> Accept: */*
+>
+* Request completely sent off
+< HTTP/1.1 302 Found
+< Date: Sat, 03 Oct 2026 05:51:31 GMT
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 45
+< Connection: keep-alive
+< Location: http://www.lambert.ai/
+< X-Served-By: Namecheap URL Forward
+< Server: namecheap-nginx
+<
+<a href='http://www.lambert.ai/'>Found</a>.
+
+* Connection #0 to host lambert.ai:80 left intact});
+} }))($R[70]=($R[71]=() => {
+        const buffer = [];
+        const listeners = [];
+        let alive = true;
+        let success = false;
+        let count = 0;
+        const internal = {
+                flush(value, mode, x) {
+                        for (x = 0; x < count; x++) if (listeners[x]) listeners[x][mode](value);
+                },
+                up(listener, x, z, current) {
+                        for (x = 0, z = buffer.length; x < z; x++) {
+                                current = buffer[x];
+                                if (!alive && x === z - 1) listener[success ? "return" : "throw"](current);
+                                else listener.next(current);
+                        }
+                },
+                on(listener, temp) {
+                        if (alive) {
+                                temp = count++;
+                                listeners[temp] = listener;
+                        }
+                        internal.up(listener);
+                        return () => {
+                                if (alive) {
+                                        listeners[temp] = listeners[count];
+                                        listeners[count--] = void 0;
+                                }
+                        };
+                }
+        };
+        return {
+                __SEROVAL_STREAM__: true,
+                on(listener) {
+                        return internal.on(listener);
+                },
+                next(value) {
+                        if (alive) {
+                                buffer.push(value);
+                                internal.flush(value, "next");
+                        }
+                },
+                throw(value) {
+                        if (alive) {
+                                buffer.push(value);
+                                internal.flush(value, "throw");
+                                alive = false;
+                                success = false;
+                                listeners.length = 0;
+                        }
+                },
+                return(value) {
+                        if (alive) {
+                                buffer.push(value);
+                                internal.flush(value, "return");
+                                alive = false;
+                                success = true;
+                                listeners.length = 0;
+                        }
+                }
+        }; install trixie
+Collecting trixie
+  Using cached trixie-0.1.2-py3-none-any.whl.metadata (1.2 kB)
+Collecting aiohttp==3.3.2 (from trixie)
+  Using cached aiohttp-3.3.2-py3-none-any.whl
+Collecting astral==1.6.1 (from trixie)
+  Using cached astral-1.6.1-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting async-timeout==3.0.0 (from trixie)
+  Using cached async_timeout-3.0.0-py3-none-any.whl.metadata (3.9 kB)
+Collecting attrs==18.1.0 (from trixie)
+  Using cached attrs-18.1.0-py2.py3-none-any.whl.metadata (10 kB)
+Collecting certifi>=2018.04.16 (from trixie)
+  Using cached certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting jinja2>=2.10 (from trixie)
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Requirement already satisfied: pip>=8.0.3 in /data/data/com.termux/files/usr/lib/python3.13/site-packages (from trixie) (26.1.2)
+Collecting pytz>=2018.04 (from trixie)
+  Downloading pytz-2026.4-py2.py3-none-any.whl.metadata (22 kB)
+Collecting pyyaml<4,>=3.11 (from trixie)
+  Using cached pyyaml-3.13-cp313-cp313-android_30_arm64_v8a.whl
+Collecting requests==2.18.4 (from trixie)
+  Using cached requests-2.18.4-py2.py3-none-any.whl.metadata (50 kB)
+Collecting typing<4,>=3 (from trixie)
+  Using cached typing-3.7.4.3-py3-none-any.whl
+Collecting voluptuous==0.11.1 (from trixie)
+  Using cached voluptuous-0.11.1-py2.py3-none-any.whl.metadata (18 kB)
+Collecting chardet<4.0,>=2.0 (from aiohttp==3.3.2->trixie)
+  Using cached chardet-3.0.4-py2.py3-none-any.whl.metadata (3.2 kB)
+Collecting multidict<5.0,>=4.0 (from aiohttp==3.3.2->trixie)
+  Using cached multidict-4.7.6.tar.gz (50 kB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting yarl<2.0,>=1.0 (from aiohttp==3.3.2->trixie)
+  Using cached yarl-1.25.1-py3-none-any.whl.metadata (111 kB)
+Collecting idna<2.7,>=2.5 (from requests==2.18.4->trixie)
+  Using cached idna-2.6-py2.py3-none-any.whl.metadata (8.9 kB)
+Collecting urllib3<1.23,>=1.21.1 (from requests==2.18.4->trixie)
+  Using cached urllib3-1.22-py2.py3-none-any.whl.metadata (32 kB)
+Collecting propcache>=0.2.1 (from yarl<2.0,>=1.0->aiohttp==3.3.2->trixie)
+  Using cached propcache-0.5.4-py3-none-any.whl.metadata (25 kB)
+Collecting MarkupSafe>=2.0 (from jinja2>=2.10->trixie)
+  Downloading markupsafe-3.0.4-cp313-cp313-android_24_arm64_v8a.whl.metadata (2.7 kB)
+Using cached trixie-0.1.2-py3-none-any.whl (2.7 MB)
+Using cached async_timeout-3.0.0-py3-none-any.whl (8.2 kB)
+Using cached astral-1.6.1-py2.py3-none-any.whl (22 kB)
+Using cached attrs-18.1.0-py2.py3-none-any.whl (28 kB)
+Using cached requests-2.18.4-py2.py3-none-any.whl (88 kB)
+Using cached voluptuous-0.11.1-py2.py3-none-any.whl (33 kB)
+Using cached chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+Using cached idna-2.6-py2.py3-none-any.whl (56 kB)
+Using cached urllib3-1.22-py2.py3-none-any.whl (132 kB)
+Using cached yarl-1.25.1-py3-none-any.whl (63 kB)
+Using cached certifi-2026.7.22-py3-none-any.whl (136 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.4-cp313-cp313-android_24_arm64_v8a.whl (12 kB)
+Using cached propcache-0.5.4-py3-none-any.whl (16 kB)
+Downloading pytz-2026.4-py2.py3-none-any.whl (506 kB)
+Building wheels for collected packages: multidict
+  Building wheel for multidict (pyproject.toml) ... error
+  error: subprocess-exited-with-error
+
+  × Building wheel for multidict (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [115 lines of output]
+      /data/data/com.termux/files/usr/tmp/pip-build-env-0u7avxyc/overlay/lib/python3.13/site-packages/setuptools/dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      !!
+
+              ********************************************************************************
+              Please consider removing the following classifiers in favor of a SPDX license expression:
+
+              License :: OSI Approved :: Apache Software License
+
+              See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+              ********************************************************************************
+
+      !!
+        self._finalize_license_expression()
+      **********************
+      * Accellerated build *
+      **********************
+      running bdist_wheel
+      running build
+      running build_py
+      creating build/lib.android-30-arm64_v8a-cpython-313/multidict
+      copying multidict/__init__.py -> build/lib.android-30-arm64_v8a-cpython-313/multidict
+      copying multidict/_abc.py -> build/lib.android-30-arm64_v8a-cpython-313/multidict
+      copying multidict/_compat.py -> build/lib.android-30-arm64_v8a-cpython-313/multidict
+      copying multidict/_multidict_base.py -> build/lib.android-30-arm64_v8a-cpython-313/multidict
+      copying multidict/_multidict_py.py -> build/lib.android-30-arm64_v8a-cpython-313/multidict
+      running egg_info
+      writing multidict.egg-info/PKG-INFO
+      writing dependency_links to multidict.egg-info/dependency_links.txt
+      writing top-level names to multidict.egg-info/top_level.txt
+      reading manifest file 'multidict.egg-info/SOURCES.txt'
+      reading manifest template 'MANIFEST.in'
+      warning: no previously-included files matching '*.pyc' found anywhere in distribution
+      warning: no previously-included files found matching 'multidict/_multidict.html'
+      warning: no previously-included files found matching 'multidict/*.so'
+      warning: no previously-included files found matching 'multidict/*.pyd'
+      warning: no previously-included files found matching 'multidict/*.pyd'
+      no previously-included directories found matching 'docs/_build'
+      adding license file 'LICENSE'
+      writing manifest file 'multidict.egg-info/SOURCES.txt'
+      /data/data/com.termux/files/usr/tmp/pip-build-env-0u7avxyc/overlay/lib/python3.13/site-packages/setuptools/command/build_py.py:215: _Warning: Package 'multidict._multilib' is absent from the `packages` configuration.
+      !!
+
+              ********************************************************************************
+              ############################
+              # Package would be ignored #
+              ############################
+              Python recognizes 'multidict._multilib' as an importable package[^1],
+              but it is absent from setuptools' `packages` configuration.
+
+              This leads to an ambiguous overall configuration. If you want to distribute this
+              package, please make sure that 'multidict._multilib' is explicitly added
+              to the `packages` configuration field.
+
+              Alternatively, you can also rely on setuptools' discovery methods
+              (for example by using `find_namespace_packages(...)`/`find_namespace:`
+              instead of `find_packages(...)`/`find:`).
+
+              You can read more about "package discovery" on setuptools documentation page:
+
+              - https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+
+              If you don't want 'multidict._multilib' to be distributed and are
+              already explicitly excluding 'multidict._multilib' via
+              `find_namespace_packages(...)/find_namespace` or `find_packages(...)/find`,
+              you can try to use `exclude_package_data`, or `include-package-data=False` in
+              combination with a more fine grained `package-data` configuration.
+
+              You can read more about "package data files" on setuptools documentation page:
+
+              - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+
+
+              [^1]: For Python, any directory (with suitable naming) can be imported,
+                    even if it does not contain any `.py` files.
+                    On the other hand, currently there is no concept of package data
+                    directory, all directories are treated like packages.
+              ********************************************************************************
+
+      !!
+        check.warn(importable)
+      copying multidict/__init__.pyi -> build/lib.android-30-arm64_v8a-cpython-313/multidict
+      copying multidict/_multidict.c -> build/lib.android-30-arm64_v8a-cpython-313/multidict
+      copying multidict/py.typed -> build/lib.android-30-arm64_v8a-cpython-313/multidict
+      creating build/lib.android-30-arm64_v8a-cpython-313/multidict/_multilib
+      copying multidict/_multilib/defs.h -> build/lib.android-30-arm64_v8a-cpython-313/multidict/_multilib
+      copying multidict/_multilib/dict.h -> build/lib.android-30-arm64_v8a-cpython-313/multidict/_multilib
+      copying multidict/_multilib/istr.h -> build/lib.android-30-arm64_v8a-cpython-313/multidict/_multilib
+      copying multidict/_multilib/iter.h -> build/lib.android-30-arm64_v8a-cpython-313/multidict/_multilib
+      copying multidict/_multilib/pair_list.h -> build/lib.android-30-arm64_v8a-cpython-313/multidict/_multilib
+      copying multidict/_multilib/views.h -> build/lib.android-30-arm64_v8a-cpython-313/multidict/_multilib
+      running build_ext
+      building 'multidict._multidict' extension
+      aarch64-linux-android-clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall -fstack-protector-strong -O3 -fstack-protector-strong -O3 -fPIC -I/data/data/com.termux/files/usr/include/python3.13 -c multidict/_multidict.c -o build/temp.android-30-arm64_v8a-cpython-313/multidict/_multidict.o -O2 -std=c99 -Wall -Wsign-compare -Wconversion -fno-strict-aliasing -pedantic
+      In file included from multidict/_multidict.c:9:
+      multidict/_multilib/iter.h:225:20: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+        225 | multidict_iter_init()
+            |                    ^
+            |                     void
+      In file included from multidict/_multidict.c:10:
+      multidict/_multilib/views.h:388:21: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+        388 | multidict_views_init()
+            |                     ^
+            |                      void
+      multidict/_multidict.c:655:5: error: call to undeclared function 'Py_TRASHCAN_SAFE_BEGIN'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+        655 |     Py_TRASHCAN_SAFE_BEGIN(self);
+            |     ^
+      multidict/_multidict.c:661:5: error: call to undeclared function 'Py_TRASHCAN_SAFE_END'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+        661 |     Py_TRASHCAN_SAFE_END(self);
+            |     ^
+      multidict/_multidict.c:1501:18: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+       1501 | PyInit__multidict()
+            |                  ^
+            |                   void
+      3 warnings and 2 errors generated.
+      error: Command '['aarch64-linux-android-clang', '-fno-strict-overflow', '-Wsign-compare', '-Wunreachable-code', '-DNDEBUG', '-g', '-O3', '-Wall', '-fstack-protector-strong', '-O3', '-fstack-protector-strong', '-O3', '-fPIC', '-I/data/data/com.termux/files/usr/include/python3.13', '-c', 'multidict/_multidict.c', '-o', 'build/temp.android-30-arm64_v8a-cpython-313/multidict/_multidict.o', '-O2', '-std=c99', '-Wall', '-Wsign-compare', '-Wconversion', '-fno-strict-aliasing', '-pedantic']' returned non-zero exit status 1.key:"HOnUBvlzAltMfmt8JdgqVQ{\"__relay_internal__pv__xc
+      http://10.0.0.96:11434/#/chat/8n3bno0moj#!/usr/bin/env python
 # coding=utf-8
 #
-# Copyright 2015 Arn-O. See the LICENSE file at the top-level directory of this
+# Copyright 2008 ricky paul lambert See the LICENSE file at the top-level directory of this
 # distribution and at
 # https://github.com/Arn-O/py-kodi-remote-controller/blob/master/LICENSE.
 
